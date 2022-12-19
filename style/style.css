@@ -180,6 +180,27 @@ nav button {
     background: var(--color-red);
     color: var(--color-white);
 }
-
 /* ---------------------------------- end navigation bar --------------------------------- */
 
+/* ---------------------------------- start image slider --------------------------------- */
+.option_section {
+    display: flex;
+    position: center;
+}
+
+.option_in_slider {
+    background: var(--color-white);
+    height: 304px;
+    width: 950px;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option {
+    background: rgba(20, 40, 80, 1);
+    color: white;
+}
+/* ---------------------------------- end image slider --------------------------------- */
