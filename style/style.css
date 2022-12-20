@@ -262,6 +262,15 @@ nav button {
 
 .featured .post__thumbnail {
     height: fit-content;
-    
+
 }
 /* ---------------------------------- End Featured --------------------------------- */
+
+/* ---------------------------------- Start Posts --------------------------------- */
+.posts__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    margin-bottom: 5rem;
+}
+/* ---------------------------------- End Posts --------------------------------- */
