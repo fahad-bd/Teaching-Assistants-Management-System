@@ -407,6 +407,37 @@ footer ul a:hover {
 }
 /* ---------------------------------- End Button  --------------------------------- */
 
+/* ---------------------------------- Start Single Post  --------------------------------- */
+.singlepost {
+    margin: 6rem 0 2rem;
+}
+
+.singlepost__container {
+    width: var(--form-width);
+    background: var(--color-gray-900);
+    padding: 1rem 2rem 3rem;
+}
+
+.singlepost__thumbnail {
+    margin: 1.5rem 0 1rem;
+}
+
+.singlepost__container p {
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+/* ---------------------------------- End Single Post  --------------------------------- */
+
+/* ---------------------------------- Start Category Post  --------------------------------- */
+.category__title {
+    height: 15rem;
+    margin-top: 4.5rem;
+    background: var(--color-gray-900);
+    display: grid;
+    place-items: center;
+}
+/* ---------------------------------- End Category Post  --------------------------------- */
+
 /* ---------------------------------- Media Queries for Medium Devices Like TAB  --------------------------------- */
 @media screen and (max-width: 1024px) {
     .container {
@@ -531,6 +562,7 @@ footer ul a:hover {
     .search__bar-container {
         width: 60%;
     }
+
 }
 /* ---------------------------------- End Media Queries  --------------------------------- */
 
@@ -570,6 +602,12 @@ footer ul a:hover {
     /* Blog Page */
     .search__bar-container {
         width: var(--container-width-md);
+    }
+
+    /* Single Post */
+    .singlepost__container {
+        background-color: transparent;
+        padding: 0;
     }
 }
 /* ---------------------------------- End Media Queries  --------------------------------- */
