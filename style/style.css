@@ -736,10 +736,6 @@ input, textarea, select {
         background: transparent;
     }
 
-    .dashboard aside {
-
-    }
-
     .dashboard aside h5 {
         display: none;
     }

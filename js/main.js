@@ -60,4 +60,3 @@ const hideSidebar = () => {
 showSidebarBtn.addEventListener('click', showSidebar);
 hideSidebarBtn.addEventListener('click', hideSidebar);
 //--------------------- End Start Manage Categori ----------------------//
-
