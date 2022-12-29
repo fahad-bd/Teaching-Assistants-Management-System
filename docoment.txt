@@ -1,0 +1,11 @@
+Documentation for CSE347 project
+
+coverPage = Home 
+massagePage = Contract
+
+
+Index.html = faculty.php
+Blog.html
+
+Folder-------------
+Partial folder for header and footer
