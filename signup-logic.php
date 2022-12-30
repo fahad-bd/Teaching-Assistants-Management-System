@@ -1,5 +1,4 @@
 <?php
-session_start();
 require 'config/database.php';
 
 // get signup form data if signup button was clicked
@@ -27,7 +26,7 @@ if(isset($_POST['submit'])){
         $_SESSION['signup'] = "Please enter your Username!";
     }
     else if(!$email){
-        $_SESSION['signup'] = "Please enter your a valid!";
+        $_SESSION['signup'] = "Please enter a valid email!";
     }
     else if(strlen($createpassword) < 8 || strlen($confirmpassword) < 8){
         $_SESSION['signup'] = "Password should be more than eight characters!";
@@ -67,13 +66,13 @@ if(isset($_POST['submit'])){
                 $extention = end($extention);
 
                 if(in_array($extention, $allowed_files)){
-                    // make sure image is not too large (1mb+)
+                    // make sure image is not too large (1mb)
                     if($profile['size'] < 1000000){
                         //upload profile pic
                         move_uploaded_file($profilepic_tmp_name, $profilepic_destination_path);
                     }
                     else {
-                        $_SESSION['signup'] = "File size too big. Should be less then 1MB";
+                        $_SESSION['signup'] = "File size too large. Should be less then 1MB";
                     }
                 }
                 else {
@@ -82,9 +81,12 @@ if(isset($_POST['submit'])){
             }
         }
     }
+    //var_dump() return a array about picture details
+    //var_dump($profile);
+
 
     //redirect back to signup page if there is any problem
-    if($_SESSION['signup']) {
+    if(isset($_SESSION['signup'])) {
         //pass form data back to signup page
         $_SESSION['signup-data'] = $_POST;
         header('location:' . ROOT_URL . 'signup.php');
@@ -92,7 +94,9 @@ if(isset($_POST['submit'])){
     }
     else {
         //insert new user in database
-        $inset_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, profile, designation, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$profilepic_name', 3,'null')";
+        $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, profile, designation, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$profilepic_name', 3,'null')";
+
+        $insert_user_result = mysqli_query($connection, $insert_user_quary);
 
         if(!mysqli_errno($connection)){
             //redirect to login page with success message
