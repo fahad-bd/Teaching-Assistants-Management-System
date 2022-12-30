@@ -35,8 +35,8 @@ require 'config/database.php';
                 <!-- <li><a href="<?php echo ROOT_URL?>about.php">About</a></li> -->
                 <!-- <li><a href="<?php echo ROOT_URL?>services.php">Services</a></li> -->
                 <li><a href="massagePage/sms.html">Contact</a></li>
-                <!-- <li><a href="<?php echo ROOT_URL?>signin.php">Sign In</a></li> -->
-                <li class="nav__profile">
+                <li><a href="<?php echo ROOT_URL?>signin.php">Sign In</a></li>
+                <!-- <li class="nav__profile">
                     <div class="avatar">
                         <img src="images/profile1.jpeg">
                     </div>
@@ -44,7 +44,7 @@ require 'config/database.php';
                         <li><a href="<?php echo ROOT_URL?>admin/index.php">Dashboard</a></li>
                         <li><a href="<?php echo ROOT_URL?>logout.php">Logout</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
 
             <!-- hamburger icon -->
