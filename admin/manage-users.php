@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAMS</title>
-
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style/style.css">
-
-    <!-- IconScout CDN -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <!-- Google Font Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/ca603e05a0.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <!--------------------------------------- navigation bar ------------------------------------->
-    <nav>
-        <div class="container nav__container">
-            <a href="index.html"><img class="nav__logo" src="images/logo.png" alt="logo"></a>
-            <ul class="nav__items">
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="signin.html">Sign In</a></li>
-                <li class="nav__profile">
-                    <div class="avatar">
-                        <img src="images/profile1.jpeg">
-                    </div>
-                    <ul>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a href="logout.html">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <!-- hamburger icon -->
-            <button id="open__nav-btn"><i class="uil uil-bars"></i></button>
-            <button id="close__nav-btn"><i class="uil uil-times-square"></i></button>
-        </div>
-    </nav>
-    <!----------------------------------------- end nav bar --------------------------------------->
+<?php
+include 'partials/header.php';
+?>
 
 
     <!----------------------------------------- Start Manage User --------------------------------------->
@@ -55,32 +10,32 @@
             <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
             <aside>
                 <ul>
-                    <li><a href="add-post.html"><i class="uil uil-pen"></i>
+                    <li><a href="add-post.php"><i class="uil uil-pen"></i>
                         <h5>Add Post</h5>
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a href="dashboard.html"><i class="uil uil-fast-mail"></i>
+                    <li><a href="index.php"><i class="uil uil-fast-mail"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a href="add-user.html"><i class="uil uil-user-plus"></i>
+                    <li><a href="add-user.php"><i class="uil uil-user-plus"></i>
                         <h5>Add User</h5>
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a class="active" href="manage-users.html"><i class="uil uil-user-times"></i>
+                    <li><a class="active" href="manage-users.php"><i class="uil uil-user-times"></i>
                         <h5>Manage User</h5>
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a href="add-category.html"><i class="uil uil-edit"></i>
+                    <li><a href="add-category.php"><i class="uil uil-edit"></i>
                         <h5>Add Categori</h5>
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a href="manage-categories.html"><i class="uil uil-list-ul"></i>
+                    <li><a href="manage-categories.php"><i class="uil uil-list-ul"></i>
                         <h5>Manage Categories</h5>
                     </a></li>
                 </ul>
@@ -101,22 +56,22 @@
                         <tr>
                             <td>Fahad Ahammed</td>
                             <td>fahad</td>
-                            <td><a href="edit-user.html" class="btn sm">Edit</a></td>
-                            <td><a href="delete-user.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
+                            <td><a href="delete-user.php" class="btn sm danger">Delete</a></td>
                             <td>Yes</td>
                         </tr>
                         <tr>
                             <td>Fahad Ahammed</td>
                             <td>fahad</td>
-                            <td><a href="edit-user.html" class="btn sm">Edit</a></td>
-                            <td><a href="delete-user.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
+                            <td><a href="delete-user.php" class="btn sm danger">Delete</a></td>
                             <td>No</td>
                         </tr>
                         <tr>
                             <td>Fahad Ahammed</td>
                             <td>fahad</td>
-                            <td><a href="edit-user.html" class="btn sm">Edit</a></td>
-                            <td><a href="delete-user.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="edit-user.php" class="btn sm">Edit</a></td>
+                            <td><a href="delete-user.php" class="btn sm danger">Delete</a></td>
                             <td>No</td>
                         </tr>
                     </body>
@@ -129,68 +84,6 @@
 
 
 
-    <!--------------------------------------- Start Footer ----------------------------------->
-    <footer>
-        <div class="footer__socials">
-            <a href="https://www.linkedin.com/in/fahad-bd/" target="_blank"><i class="uil uil-linkedin"></i></a>
-            <a href="https://www.youtube.com/" target="_blank"><i class="uil uil-youtube"></i></a>
-            <a href="https://www.facebook.com/fahadahammedbd" target="_blank"><i class="uil uil-facebook"></i></a>
-            <a href="https://twitter.com/fahadbd01" target="_blank"><i class="uil uil-twitter"></i></a>
-            <a href="https://www.instagram.com/fahadahammedbd/" target="_blank"><i class="uil uil-instagram-alt"></i></a>
-        </div>
-        <div class="container footer__container">
-            <article>
-                <h4>Categories</h4>
-                <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Important Link</h4>
-                <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="">Call Numbers</a></li>
-                    <li><a href="">Email</a></li>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Category</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Permalinks</h4>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Faculty Members</a></li>
-                    <li><a href="">Teaching Assistant</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Signin</a></li>
-                </ul>
-            </article>
-        </div>
-        <div class="footer__copyright">
-            <small>Copyright &copy; 2022 East West University</small>
-        </div>
-    </footer>
-    <!--------------------------------------- End Footer ----------------------------------->
-
-
-    <!-------------------------------------- Custom Js File -------------------------------------->
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php
+include '../partials/footer.php';
+?>

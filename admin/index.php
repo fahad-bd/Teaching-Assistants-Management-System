@@ -15,7 +15,7 @@ include 'partials/header.php';
                     </a></li>
                 </ul>
                 <ul>
-                    <li><a class="active" href="dashboard.php"><i class="uil uil-fast-mail"></i>
+                    <li><a class="active" href="index.php"><i class="uil uil-fast-mail"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
                 </ul>
