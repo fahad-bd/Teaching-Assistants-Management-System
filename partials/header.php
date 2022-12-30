@@ -12,7 +12,7 @@ require 'config/database.php';
     <title>TAMS</title>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="<?php echo ROOT_URL?>style/style.css">
 
     <!-- IconScout CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -27,7 +27,7 @@ require 'config/database.php';
     <!--------------------------------------- navigation bar ------------------------------------->
     <nav>
         <div class="container nav__container">
-            <a href="coverPage/index.html"><img class="nav__logo" src="images/logo.png" alt="logo"></a>
+            <a href="<?php echo ROOT_URL?>faculty.php"><img class="nav__logo" src="images/logo.png" alt="logo"></a>
             <ul class="nav__items">
                 <li><a href="<?php echo ROOT_URL?>faculty.php">Faculty</a></li>
                 <li><a href="<?php echo ROOT_URL?>ta.php">Teaching Assistant</a></li>
