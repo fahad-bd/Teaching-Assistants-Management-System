@@ -1,14 +1,9 @@
 <?php
-include 'partials/header.php'
+include 'partials/header.php';
 ?>
 
-    <!----------------------------------------- Start Category Title --------------------------------------->
-    <header class="category__title">
-        <h2>Category Title</h2>
-    </header>
-    <!----------------------------------------- End Category Title --------------------------------------->
-   
     <!--------------------------------------- Start Post ----------------------------------->
+    <br><br>
     <section class="posts">
         <div class="container posts__container">
             <article class="post">
@@ -222,6 +217,7 @@ include 'partials/header.php'
     </section>
     <!--------------------------------------- End Category ----------------------------------->
 
+   <!-- footer -->
 <?php
-include 'partials/footer.php'
+include 'partials/footer.php';
 ?>
