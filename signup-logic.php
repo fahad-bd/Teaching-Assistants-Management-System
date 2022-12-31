@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'config/database.php';
 
 // get signup form data if signup button was clicked
@@ -10,17 +11,16 @@ if(isset($_POST['submit'])){
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $profile = $_FILES['profile'];
+    $avatar = $_FILES['avatar'];
     //echo $firstname, $lastname, $username, $email, $createpassword, $confirmpassword;
-    //var_dump($profile);
+    //var_dump($avatar);
 
     // validate input values
     if(!$firstname){
-        $_SESSION['signup'] = "Please enter your first name!";
+        $_SESSION['signup'] = "Please enter your First Name!";
     } 
     else if(!$lastname){
-        $_SESSION['signup'] = "Please enter your last name!";
+        $_SESSION['signup'] = "Please enter your Last Name!";
     }
     else if(!$username){
         $_SESSION['signup'] = "Please enter your Username!";
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     else if(strlen($createpassword) < 8 || strlen($confirmpassword) < 8){
         $_SESSION['signup'] = "Password should be more than eight characters!";
     }
-    else if(!$profile['name']){
+    else if(!$avatar['name']){
         $_SESSION['signup'] = "Please select a profile picture!";
     }
     else {
@@ -55,21 +55,42 @@ if(isset($_POST['submit'])){
             else {
                 // work on profile pic 
                 // rename profile pic
-                $time = time(); //make pic name unique by current time 
-                $profilepic_name = $time . $profile['name'];
-                $profilepic_tmp_name = $profile['tmp_name'];
-                $profilepic_destination_path = 'images/' . $profilepic_name;
+                // $time = time(); //make pic name unique by current time 
+                // $avatar_name = $time . $avatar['name'];
+                // $avatar_tmp_name = $avatar['tmp_name'];
+                // $avatar_destination_path = 'images/' . $avatar_name;
                 
-                // make sure file is an image
-                $allowed_files = ['png', 'jpg', 'jpeg'];
-                $extention = explode('.', $profilepic_name);
-                $extention = end($extention);
+                // // make sure file is an image
+                // $allowed_files = ['png', 'jpg', 'jpeg'];
+                // $extention = explode('.', $avatar_name);
+                // $extention = end($extention);
 
-                if(in_array($extention, $allowed_files)){
+                // if(in_array($extention, $allowed_files)){
+                //     // make sure image is not too large (1mb)
+                //     if($avatar['size'] < 1000000){
+                //         //upload profile pic
+                //         move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
+                //     }
+                //     else {
+                //         $_SESSION['signup'] = "File size too large. Should be less then 1MB";
+                //     }
+                // }
+                // else {
+                //     $_SESSION['signup'] = "File should be png, jpg, or jpeg";
+                // }
+
+                //try in another way
+                $targetDir = "images/";
+                $fileName = basename($_FILES["avatar"]["name"]);
+                $targetFilePath = $targetDir . $fileName;
+                $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+                $allowTypes = ['png', 'jpg', 'jpeg'];
+
+                if(in_array($fileType, $allowTypes)){
                     // make sure image is not too large (1mb)
-                    if($profile['size'] < 1000000){
+                    if($avatar['size'] < 1000000){
                         //upload profile pic
-                        move_uploaded_file($profilepic_tmp_name, $profilepic_destination_path);
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], $targetFilePath);
                     }
                     else {
                         $_SESSION['signup'] = "File size too large. Should be less then 1MB";
@@ -94,7 +115,8 @@ if(isset($_POST['submit'])){
     }
     else {
         //insert new user in database
-        $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, profile, designation, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$profilepic_name', 3,'null')";
+        // $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0,'null')";
+        $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$fileName', 0,'null')";
 
         $insert_user_result = mysqli_query($connection, $insert_user_quary);
 

@@ -1,5 +1,14 @@
 <?php
 require 'config/database.php';
+
+//fetch current user from database, show profile pic from DB
+if(isset($_SESSION['user-id'])) {
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT profile FROM users WHERE id = $id";
+    $result = mysqli_query($connection, $query);
+    $profile = mysqli_fetch_assoc($result);
+}
+
 ?>
 
 
@@ -35,16 +44,23 @@ require 'config/database.php';
                 <!-- <li><a href="<?php echo ROOT_URL?>about.php">About</a></li> -->
                 <!-- <li><a href="<?php echo ROOT_URL?>services.php">Services</a></li> -->
                 <li><a href="massagePage/sms.html">Contact</a></li>
+
+                <!-- if already login then show profile or show login option -->
+                <?php if(isset($_SESSION['user-id'])) : ?>
+                    <li class="nav__profile">
+                        <div class="avatar">
+                            <img src="<?=ROOT_URL . 'images/' . $profile['profile']?>">
+                        </div>
+                        <ul>
+                            <li><a href="<?php echo ROOT_URL?>admin/index.php">Dashboard</a></li>
+                            <li><a href="<?php echo ROOT_URL?>logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php else : ?>    
+
                 <li><a href="<?php echo ROOT_URL?>signin.php">Sign In</a></li>
-                <!-- <li class="nav__profile">
-                    <div class="avatar">
-                        <img src="images/profile1.jpeg">
-                    </div>
-                    <ul>
-                        <li><a href="<?php echo ROOT_URL?>admin/index.php">Dashboard</a></li>
-                        <li><a href="<?php echo ROOT_URL?>logout.php">Logout</a></li>
-                    </ul>
-                </li> -->
+                
+                <?php endif ?>
             </ul>
 
             <!-- hamburger icon -->

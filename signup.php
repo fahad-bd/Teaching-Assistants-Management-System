@@ -8,7 +8,6 @@ $username = $_SESSION['signup-data']['username'] ?? null;
 $email = $_SESSION['signup-data']['email'] ?? null;
 $createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
 $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
-$firstname = $_SESSION['signup-data']['firstname'] ?? null;
 
 //delete signup data session
 unset($_SESSION['signup-data']);
@@ -62,7 +61,7 @@ unset($_SESSION['signup-data']);
                 <input type="password" name="confirmpassword" value="<?= $confirmpassword?>" placeholder="Confirm Password">
                 <div class="form__control">
                     <label for="avatar">User Profile Picture</label>
-                    <input type="file" name="profile" id="avatar">
+                    <input type="file" name="avatar" id="avatar">
                 </div>
                 <button type="submit" name="submit" class="btn">Sign Up</button>
                 <small>Already have an account? <a href="signin.php">Sign In</a></small>
