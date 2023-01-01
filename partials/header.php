@@ -4,9 +4,9 @@ require 'config/database.php';
 //fetch current user from database, show profile pic from DB
 if(isset($_SESSION['user-id'])) {
     $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT profile FROM users WHERE id = $id";
+    $query = "SELECT avatar FROM users WHERE id = $id";
     $result = mysqli_query($connection, $query);
-    $profile = mysqli_fetch_assoc($result);
+    $avatar = mysqli_fetch_assoc($result);
 }
 
 ?>
@@ -49,7 +49,7 @@ if(isset($_SESSION['user-id'])) {
                 <?php if(isset($_SESSION['user-id'])) : ?>
                     <li class="nav__profile">
                         <div class="avatar">
-                            <img src="<?=ROOT_URL . 'images/' . $profile['profile']?>">
+                            <img src="<?=ROOT_URL . 'images/' . $avatar['avatar']?>">
                         </div>
                         <ul>
                             <li><a href="<?php echo ROOT_URL?>admin/index.php">Dashboard</a></li>
