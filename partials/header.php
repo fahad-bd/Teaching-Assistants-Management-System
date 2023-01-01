@@ -36,7 +36,7 @@ if(isset($_SESSION['user-id'])) {
     <!--------------------------------------- navigation bar ------------------------------------->
     <nav>
         <div class="container nav__container">
-            <a href="<?php echo ROOT_URL?>faculty.php"><img class="nav__logo" src="images/logo.png" alt="logo"></a>
+            <a href="<?php echo ROOT_URL?>faculty.php"><img class="nav__logo" src="<?php echo ROOT_URL?>images/logo.png" alt="logo"></a>
             <ul class="nav__items">
                 <li><a href="<?php echo ROOT_URL?>faculty.php">Faculty</a></li>
                 <li><a href="<?php echo ROOT_URL?>ta.php">Teaching Assistant</a></li>
