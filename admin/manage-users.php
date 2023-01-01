@@ -6,9 +6,22 @@ include 'partials/header.php';
 
     <!----------------------------------------- Start Manage User --------------------------------------->
     <section class="dashboard">
+
+        <!-- success massege for added user  -->
+        <?php if(isset($_SESSION['add-user-success'])) : ?>
+            <div class="alert__message success container">
+                    <p>
+                        <?= $_SESSION['add-user-success'];
+                        unset($_SESSION['add-user-success']); 
+                        ?>
+                    </p>
+            </div>
+        <?php endif ?>
+
         <div class="container dashboard__container">
             <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
             <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
+
             <aside>
                 <ul>
                     <li><a href="add-post.php"><i class="uil uil-pen"></i>
@@ -36,6 +49,10 @@ include 'partials/header.php';
                     <li><a href="manage-categories.php"><i class="uil uil-list-ul"></i>
                         <h5>Manage Categories</h5>
                     </a></li>
+
+                    <!-- <li><a href="manage-categories.php"><i class="uil uil-list-ul"></i>
+                        <h5>Add Profile</h5>
+                    </a></li> -->
 
                     <?php endif ?>
                 </ul>
