@@ -31,13 +31,13 @@ if(isset($_GET['id'])) {
     $delete_user_result = mysqli_query($connection, $delete_user_query);
 
     if(mysqli_errno($connection)){
-        $_SESSION['delete-user'] = "Error occurs! '{$user['firstname']}' '{$user['lastname']}' Couldn't delete";
+        $_SESSION['delete-user'] = "Error occurs! Couldn't delete";
     }
     else {
-        $_SESSION['delete-user-success'] = "'{$user['firstname']}' '{$user['lastname']}' deleted successfully";
+        $_SESSION['delete-user-success'] = "Deleted successfully";
     }
 }
 
-header('locaton: ' . ROOT_URL . 'admin/manage-users.php');
+header('location: ' . ROOT_URL . 'admin/manage-users.php');
 die();
 ?>
