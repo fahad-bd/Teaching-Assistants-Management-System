@@ -39,6 +39,24 @@ $users = mysqli_query($connection, $query);
                         ?>
                     </p>
             </div>
+            <!-- delete user error sms  -->
+        <?php elseif(isset($_SESSION['delete-user'])) : ?> 
+            <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['delete-user'];
+                        unset($_SESSION['delete-user']); 
+                        ?>
+                    </p>
+            </div>
+            <!-- delete user success sms  -->
+        <?php elseif(isset($_SESSION['delete-user-success'])) : ?> 
+            <div class="alert__message success container">
+                    <p>
+                        <?= $_SESSION['delete-user-success'];
+                        unset($_SESSION['delete-user-success']); 
+                        ?>
+                    </p>
+            </div>
         <?php endif ?>
 
         <div class="container dashboard__container">
