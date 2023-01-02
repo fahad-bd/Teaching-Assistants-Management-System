@@ -21,6 +21,24 @@ $users = mysqli_query($connection, $query);
                         ?>
                     </p>
             </div>
+            <!-- edit user if succefull give this sms  -->
+        <?php elseif(isset($_SESSION['edit-user-success'])) : ?>  
+            <div class="alert__message success container">
+                    <p>
+                        <?= $_SESSION['edit-user-success'];
+                        unset($_SESSION['edit-user-success']); 
+                        ?>
+                    </p>
+            </div>
+            <!-- edit user if error than show this  -->
+        <?php elseif(isset($_SESSION['edit-user'])) : ?> 
+            <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['edit-user'];
+                        unset($_SESSION['edit-user']); 
+                        ?>
+                    </p>
+            </div>
         <?php endif ?>
 
         <div class="container dashboard__container">
