@@ -9,7 +9,7 @@ if(isset($_POST['submit'])) {
     $is_admin = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
 
     //check for valid input
-    if(!$firstname || $lastname){
+    if(!$firstname || !$lastname){
         $_SESSION['edit-user'] = "Invalid Input for edit user.";
     }
     else {
