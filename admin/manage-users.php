@@ -100,6 +100,7 @@ $users = mysqli_query($connection, $query);
             </aside>
             <main>
                 <h2>Manage Users</h2>
+                <?php if(mysqli_num_rows($users) > 0) : ?>
                 <table>
                     <thead>
                         <tr>
@@ -122,6 +123,11 @@ $users = mysqli_query($connection, $query);
                         <?php endwhile ?>
                     </tbody>
                 </table>
+                <?php else : ?>
+                    <div class="alert__message error">
+                        <?= "No users found!" ?>
+                    </div>
+                <?php endif ?>    
             </main>
         </div>
     </section>
