@@ -11,9 +11,32 @@ $categories = mysqli_query($connection, $query);
 
     <!----------------------------------------- Start Manage Categori --------------------------------------->
     <section class="dashboard">
+
+    <!-- success massege for added categories  -->
+    <?php if(isset($_SESSION['add-category-success'])) : ?>
+            <div class="alert__message success container">
+                    <p>
+                        <?= $_SESSION['add-category-success'];
+                        unset($_SESSION['add-category-success']); 
+                        ?>
+                    </p>
+            </div>
+    <?php elseif(isset($_SESSION['add-category'])) : ?>
+            <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['add-category'];
+                        unset($_SESSION['add-category']); 
+                        ?>
+                    </p>
+            </div>
+    <?php endif ?>
+
         <div class="container dashboard__container">
             <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
             <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
+
+
+
             <aside>
                 <ul>
                     <li><a href="add-post.php"><i class="uil uil-pen"></i>
