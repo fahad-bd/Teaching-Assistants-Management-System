@@ -7,12 +7,16 @@ if(isset($_GET['id'])){
     //update category_id for the deleted category post to id of uncategorised 
 
 
-
-    // delete category
-    $query = "DELETE FROM categories WHERE id = $id LIMIT 1";
-    $result = mysqli_query($connection, $query);
-    $_SESSION['delete-category-success'] = "Category deleted successfully.";
-
+    // if this is defalt category that will be not able to delete
+    if($id == 5 || $id == 6 || $id == 7){
+        $_SESSION['delete-category'] = "Defalt category cannot be deleted.";
+    }
+    else{ 
+        // delete category
+        $query = "DELETE FROM categories WHERE id = $id LIMIT 1";
+        $result = mysqli_query($connection, $query);
+        $_SESSION['delete-category-success'] = "Category deleted successfully.";
+    }
 }
 
 header('location: ' . ROOT_URL . 'admin/manage-categories.php');

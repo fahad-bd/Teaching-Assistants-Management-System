@@ -53,6 +53,14 @@ $categories = mysqli_query($connection, $query);
                         ?>
                     </p>
             </div>
+    <?php elseif(isset($_SESSION['delete-category'])) : ?>
+            <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['delete-category'];
+                        unset($_SESSION['delete-category']); 
+                        ?>
+                    </p>
+            </div>
     <?php endif ?>
 
         <div class="container dashboard__container">
