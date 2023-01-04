@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
     $thumbnail = $_FILES['thumbnail'];
 
-    $is_featured = $is_featured == 1 ?: 0;
+   // $is_featured = $is_featured == 1 ?: 0;
 
     //check input valide or not 
     if(!$title){
@@ -83,14 +83,14 @@ if(isset($_POST['submit'])){
         die();
     }
     else {
-        if($is_featured == 1){
-            $zero_all_is_featured_query = "UPDATE posts SET is_featurd = 0";
-            $zero_all_is_featured_result = mysqli_query($connection, $zero_all_is_featured_query);
-        }
+        // if($is_featured == 1){
+        //     $zero_all_is_featured_query = "UPDATE posts SET is_featurd = 0";
+        //     $zero_all_is_featured_result = mysqli_query($connection, $zero_all_is_featured_query);
+        // }
         
         // $thumbnail_to_insert = $thumbnail_name ?? $previous_thumbnail_name;
         
-        $query = "UPDATE posts SET title = '$title', body = '$body', thumbnail = '$fileName', category_id = $category_id, is_featured = $is_featured WHERE id = $id LIMIT 1";
+        $query = "UPDATE posts SET title = '$title', body = '$body', thumbnail = '$fileName', category_id = $category_id, is_featured = 0 WHERE id = $id LIMIT 1";
         $result = mysqli_query($connection, $query);
 
         if(!mysqli_errno($connection)){
@@ -101,8 +101,8 @@ if(isset($_POST['submit'])){
     }  
 
 }
-else { 
+
 header('location: ' . ROOT_URL . 'admin/index.php');
 die();
-}
+
 ?>
