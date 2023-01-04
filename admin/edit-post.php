@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     $post = mysqli_fetch_assoc($result);
 }
 else {
-    header('location: ' .ROOT_URL . 'admin/index.php');
+    header('location: ' . ROOT_URL . 'admin/index.php');
     die();
 }
 
@@ -22,7 +22,7 @@ else {
     <section class="form__section">
         <div class="container form__section-container">
             <h2>Edit Post</h2>
-            <form action="<?= ROOT_URL ?>adimn/edit-post-logic.php" enctype="multipart/form-data" method="POST">
+            <form action="<?= ROOT_URL ?>admin/edit-post-logic.php" enctype="multipart/form-data" method="POST">
                 <input type="hidden" name="id" value="<?= $post['id'] ?>">
                 <input type="hidden" name="previous_thumbnail_name" value="<?= $post['thumbnail'] ?>">
                 <input type="text" name="title" value="<?= $post['title'] ?>" placeholder="Title">
@@ -33,8 +33,8 @@ else {
                 </select>
                 <textarea rows="10" name="body" placeholder="Body"><?= $post['body'] ?></textarea>
                 <div class="form__control inline">
-                    <input type="checkbox" id="is_featured"  value="1" checked>
-                    <label for="is_featured" name="is_featured">Featured</label>
+                    <input type="checkbox" name="is_featured" id="is_featured"  value="1" checked>
+                    <label for="is_featured">Featured</label>
                 </div>
                 <div class="form__control">
                     <label for="thumbnail">Change Thumbnail</label>
