@@ -29,6 +29,10 @@ else {
                     <option value="0">Teaching Assistant</option>
                     <option value="1">Admin</option>
                 </select>
+                <div class="form__control">
+                    <label for="avatar">Profile Picture</label>
+                    <input type="file" name="avatar" id="avatar">
+                </div>
                 <button class="btn" name="submit" type="submit">Update User</button>
             </form>
         </div>
