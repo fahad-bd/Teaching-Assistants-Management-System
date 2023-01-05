@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
     else {
         //insert new user in database
         // $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0,'null')";
-        $insert_user_quary = "INSERT INTO profile (name, description, profilePic, is_ta) VALUES ('$name', '$description', '$fileName', $is_ta)";
+        $insert_user_quary = "INSERT INTO profile (name, description, profilePic, ta1, ta2, is_ta) VALUES ('$name', '$description', '$fileName', 0, 0, $is_ta)";
 
         $insert_user_result = mysqli_query($connection, $insert_user_quary);
 

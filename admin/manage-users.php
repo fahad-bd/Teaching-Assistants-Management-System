@@ -82,6 +82,14 @@ $users = mysqli_query($connection, $query);
                     <li><a class="active" href="manage-users.php"><i class="uil uil-user-times"></i>
                         <h5>Manage User</h5>
                     </a></li>
+
+                    <li><a href="add-profile.php"><i class="uil uil-user-square"></i>
+                        <h5>Add Profile</h5>
+                    </a></li>
+                
+                    <li><a href="manage-profile.php"><i class="uil uil-user-circle"></i>
+                        <h5>Manage Profile</h5>
+                    </a></li>
                 
                     <li><a href="add-category.php"><i class="uil uil-edit"></i>
                         <h5>Add Categori</h5>
