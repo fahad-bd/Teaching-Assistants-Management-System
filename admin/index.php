@@ -65,8 +65,16 @@ $posts = mysqli_query($connection, $query);
                         <h5>Add User</h5>
                     </a></li>
                 
-                    <li><a href="manage-users.php"><i class="uil uil-user-times"></i>
+                    <li><a href="manage-users.php"><i class="uil uil-book-reader"></i>
                         <h5>Manage User</h5>
+                    </a></li>
+
+                    <li><a href="add-profile.php"><i class="uil uil-user-square"></i>
+                        <h5>Add Profile</h5>
+                    </a></li>
+                
+                    <li><a href="manage-profile.php"><i class="uil uil-user-circle"></i>
+                        <h5>Manage Profile</h5>
                     </a></li>
                 
                     <li><a href="add-category.php"><i class="uil uil-edit"></i>

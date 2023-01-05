@@ -17,13 +17,13 @@ if(isset($_POST['submit'])){
 
     // validate input values
     if(!$firstname){
-        $_SESSION['add-user'] = "Please enter your First Name!";
+        $_SESSION['add-user'] = "Please enter user First Name!";
     } 
     else if(!$lastname){
-        $_SESSION['add-user'] = "Please enter your Last Name!";
+        $_SESSION['add-user'] = "Please enter user Last Name!";
     }
     else if(!$username){
-        $_SESSION['add-user'] = "Please enter your Username!";
+        $_SESSION['add-user'] = "Please enter Username!";
     }
     else if(!$email){
         $_SESSION['add-user'] = "Please enter a valid email!";
