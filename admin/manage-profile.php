@@ -92,7 +92,7 @@ $profiles = mysqli_query($connection, $profiles_query);
                         <h5>Add User</h5>
                     </a></li>
                 
-                    <li><a class="active" href="manage-users.php"><i class="uil uil-user-times"></i>
+                    <li><a href="manage-users.php"><i class="uil uil-book-reader"></i>
                         <h5>Manage User</h5>
                     </a></li>
 
