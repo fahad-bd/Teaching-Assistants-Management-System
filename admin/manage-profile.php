@@ -70,6 +70,14 @@ $profiles = mysqli_query($connection, $profiles_query);
                         ?>
                     </p>
             </div>
+        <?php elseif(isset($_SESSION['edit-profile-success'])) : ?> 
+            <div class="alert__message success container">
+                    <p>
+                        <?= $_SESSION['edit-profile-success'];
+                        unset($_SESSION['edit-profile-success']); 
+                        ?>
+                    </p>
+            </div>
         <?php elseif(isset($_SESSION['delete-profile'])) : ?> 
             <div class="alert__message error container">
                     <p>

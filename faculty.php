@@ -7,15 +7,18 @@ include 'partials/header.php';
     <section class="featured">
         <div class="container featured__container">
             <div class="post__thumbnail">
-                <img src="./images/pic/blog1.jpg" alt="">
+                <img src="./images/tj.jpeg" alt="">
             </div>
             <div class="post__info">
-                <a href="category-posts.html" class="category__button">Wild Life</a>
-                <h2 class="post__title"><a href="post.html">Lorem ipsum dolor sit amet.</a></h2>
-                <p class="post__body">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat sit labore delectus ratione ipsa saepe asperiores quisquam provident libero, natus accusantium suscipit unde, voluptatem ab.
+                <br>
+                <br>
+                <!-- <a href="category-posts.html" class="category__button">Wild Life</a> -->
+                <h2 class="post__title"><a href="<?= ROOT_URL ?>tj.php">Dr. Taskeed Jabid</a></h2>
+                <p class="post__body" style="text-align: justify;">
+                    Chairperson & Associate Professor <br> Department of Computer Science & Engineering <br> <br>
+                    We welcome you on behalf of the faculty, staff, and students of the Department of Computer Science and Engineering (CSE) at the East West University (EWU). It is one of the few private universities in Bangladesh that has got a Permanent Certificate from the Ministry of Education by fulfilling all the criteria set for the status. CSE Department at EWU was founded in 1996 at the very beginning of the establishment of the university. CSE Department is now the second largest department of East West University. It has about 1200 students and 28 qualified full-time faculty members. Nevertheless, the present civilization cannot be thought without the use of Information Technology. 
                 </p>
-                <div class="post__author">
+                <!-- <div class="post__author">
                     <div class="post__author-avatar">
                         <img src="images/pic/avatar2.jpg" alt="">
                     </div>
@@ -23,7 +26,7 @@ include 'partials/header.php';
                         <h5>By: Taskid Javid</h5>
                         <small>December 10, 2022 - 09:21</small>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
