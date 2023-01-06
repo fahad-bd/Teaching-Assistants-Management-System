@@ -54,6 +54,14 @@ $profiles = mysqli_query($connection, $profiles_query);
                         ?>
                     </p>
             </div>
+        <?php elseif(isset($_SESSION['add-profile'])) : ?> 
+            <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['add-profile'];
+                        unset($_SESSION['add-profile']); 
+                        ?>
+                    </p>
+            </div>
         <?php elseif(isset($_SESSION['add-profile-success'])) : ?> 
             <div class="alert__message success container">
                     <p>
@@ -62,8 +70,16 @@ $profiles = mysqli_query($connection, $profiles_query);
                         ?>
                     </p>
             </div>
-        <?php elseif(isset($_SESSION['delete-profile-success'])) : ?> 
+        <?php elseif(isset($_SESSION['delete-profile'])) : ?> 
             <div class="alert__message error container">
+                    <p>
+                        <?= $_SESSION['delete-profile'];
+                        unset($_SESSION['delete-profile']); 
+                        ?>
+                    </p>
+            </div>
+        <?php elseif(isset($_SESSION['delete-profile-success'])) : ?> 
+            <div class="alert__message success container">
                     <p>
                         <?= $_SESSION['delete-profile-success'];
                         unset($_SESSION['delete-profile-success']); 
