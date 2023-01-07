@@ -56,8 +56,9 @@ if(isset($_POST['submit'])){
 
 
         //try in another way
-        $targetDir = "../images/";
         $fileName = basename($_FILES["thumbnail"]["name"]);
+        if($fileName){ 
+        $targetDir = "../images/";
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
         $allowTypes = ['png', 'jpg', 'jpeg'];
@@ -76,6 +77,7 @@ if(isset($_POST['submit'])){
             $_SESSION['edit-post'] = "File should be png, jpg, or jpeg";
         } 
     }
+    }
 
     
     if(isset($_SESSION['edit-post'])){
@@ -89,9 +91,16 @@ if(isset($_POST['submit'])){
         // }
         
         // $thumbnail_to_insert = $thumbnail_name ?? $previous_thumbnail_name;
+
+        if($fileName){
+            $query = "UPDATE posts SET title = '$title', body = '$body', thumbnail = '$fileName', category_id = $category_id, is_featured = 0 WHERE id = $id LIMIT 1";
+            $result = mysqli_query($connection, $query);
+        }
+        else {
+            $query = "UPDATE posts SET title = '$title', body = '$body', category_id = $category_id, is_featured = 0 WHERE id = $id LIMIT 1";
+            $result = mysqli_query($connection, $query);
+        }
         
-        $query = "UPDATE posts SET title = '$title', body = '$body', thumbnail = '$fileName', category_id = $category_id, is_featured = 0 WHERE id = $id LIMIT 1";
-        $result = mysqli_query($connection, $query);
 
         if(!mysqli_errno($connection)){
             $_SESSION['edit-post-success'] = "Post Update Successfull.";

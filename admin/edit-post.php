@@ -32,10 +32,10 @@ else {
                     <?php endwhile ?>
                 </select>
                 <textarea rows="10" name="body" placeholder="Body"><?= $post['body'] ?></textarea>
-                <div class="form__control inline">
+                <!-- <div class="form__control inline">
                     <input type="checkbox" name="is_featured" id="is_featured"  value="1" checked>
                     <label for="is_featured">Featured</label>
-                </div>
+                </div> -->
                 <div class="form__control">
                     <label for="thumbnail">Change Thumbnail</label>
                     <input type="file" name="thumbnail" id="thumbnail">
