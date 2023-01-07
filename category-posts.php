@@ -21,7 +21,7 @@ else {
         <h2><?= $category['title'] ?></h2>
     </header>
     <!----------------------------------------- End Category Title --------------------------------------->
-   
+<?php if (mysqli_num_rows($result) > 0 ) : ?> 
     <!--------------------------------------- Start Post ----------------------------------->
     <section class="posts">
         <div class="container posts__container">
@@ -62,7 +62,11 @@ else {
         </div>
     </section>
     <!--------------------------------------- End Post ----------------------------------->
-
+<?php else : ?>
+<div class="alert__message error lg">
+    <p>No posts found for this category!</p>
+</div>
+<?php endif ?>
     <!--------------------------------------- Start Category ----------------------------------->
     <section class="category__buttons">
         <div class="container category__buttons-container">
