@@ -52,12 +52,13 @@ include 'partials/header.php'
     <!--------------------------------------- Start Category ----------------------------------->
     <section class="category__buttons">
         <div class="container category__buttons-container">
-            <a href="" class="category__button">Art</a>
-            <a href="" class="category__button">Wild Life</a>
-            <a href="" class="category__button">Travel</a>
-            <a href="" class="category__button">Category</a>
-            <a href="" class="category__button">Category</a>
-            <a href="" class="category__button">Category</a>
+            <?php
+                $all_categories_query = "SELECT * FROM categories";
+                $all_categories = mysqli_query($connection, $all_categories_query);
+            ?>
+            <?php while($category = mysqli_fetch_assoc($all_categories)) : ?>
+            <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $category['id'] ?>" class="category__button"><?= $category['title'] ?></a>
+            <?php endwhile ?>
         </div>
     </section>
     <!--------------------------------------- End Category ----------------------------------->

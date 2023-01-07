@@ -21,7 +21,7 @@ if(isset($_SESSION['user-id'])) {
     <title>TAMS</title>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="<?php echo ROOT_URL?>style/style.css">
+    <link rel="stylesheet" href="<?php echo ROOT_URL?>style/stylePost.css">
 
     <!-- IconScout CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">

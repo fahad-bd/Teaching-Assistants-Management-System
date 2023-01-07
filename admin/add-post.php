@@ -39,10 +39,10 @@ unset($_SESSION['add-post-data']);
 
 
                 <?php if(isset($_SESSION['user_is_admin'])) : ?>
-                <div class="form__control inline">
+                <!-- <div class="form__control inline">
                     <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                     <label for="is_featured">Featured</label>
-                </div>
+                </div> -->
                 <?php endif ?>
 
                 
