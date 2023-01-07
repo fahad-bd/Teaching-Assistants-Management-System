@@ -1,10 +1,10 @@
 <?php
-include 'partials/header.php';
+include 'partials/headerPost.php';
 
 //fetch bata
 if(isset($_GET['id'])){
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT * FROM posts WHERE category_id = $id";
+    $query = "SELECT * FROM posts WHERE category_id = $id ORDER BY date_time DESC";
     $result = mysqli_query($connection, $query);
     $category_query = "SELECT * FROM categories WHERE id = $id";
     $category_result = mysqli_query($connection, $category_query);

@@ -2,7 +2,7 @@
 include 'partials/headerPost.php';
 
 
-$query = "SELECT * FROM posts";
+$query = "SELECT * FROM posts ORDER BY date_time DESC";
 $posts = mysqli_query($connection, $query);
 ?>
 
