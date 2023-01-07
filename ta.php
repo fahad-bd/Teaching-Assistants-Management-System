@@ -1,205 +1,30 @@
 <?php
 include 'partials/header.php';
+
+// fetch post 
+$query = "SELECT * FROM profile WHERE is_ta = 1";
+$faculty_result = mysqli_query($connection, $query);
 ?>
 
+<br><br>
     <!--------------------------------------- Start Post ----------------------------------->
-    <br><br>
     <section class="posts">
         <div class="container posts__container">
+            <?php while($faculty = mysqli_fetch_assoc($faculty_result)) : ?>
             <article class="post">
                 <div class="post__thumbnail">
-                    <img src="images/pic/blog2.jpg" alt="">
+                    <img src="./images/<?= $faculty['profilePic'] ?>" alt="">
                 </div>
                 <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
                     <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
+                        <a href="<?= ROOT_URL ?>profile.php?id=<?= $faculty['id'] ?>"><?= $faculty['name'] ?></a>
                     </h3>
                     <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
+                        <?= substr($faculty['description'],0,150) ?>...
                     </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar3.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
                 </div>
             </article>
-        
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog3.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar4.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog9.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar5.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog5.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar6.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog6.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar7.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
-
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog7.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar8.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
-
-
-
-        
-            <article class="post">
-                <div class="post__thumbnail">
-                    <img src="images/pic/blog8.jpg" alt="">
-                </div>
-                <div class="post__info">
-                    <a href="category-posts.html" class="category__button">Wild Life</a>
-                    <h3 class="post__title">
-                        <a href="post.html">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, repudiandae!</a>
-                    </h3>
-                    <p class="post__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore quasi, numquam voluptatem unde facere? Impedit unde dolores nulla mollitia! Inventore, ipsa distinctio?
-                    </p>
-                    <div class="post__author">
-                        <div class="post__author-avatar">
-                            <img src="images/pic/avatar9.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="post__author-info">
-                        <h5>By: F. Ahmad</h5>
-                        <small>January 10, 2022 - 10:11</small>
-                    </div>
-                </div>
-            </article>
-        
-
+            <?php endwhile ?>
         </div>
     </section>
     <!--------------------------------------- End Post ----------------------------------->
