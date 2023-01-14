@@ -10,25 +10,25 @@
         </div>
         <div class="container footer__container">
             <article>
-                <h4>Categories</h4>
+                <h4>Main Website</h4>
                 <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Travel</a></li>
+                    <li><a href="https://www.ewubd.edu/">East West University</a></li>
+                    <li><a href="https://fse.ewubd.edu/">Faculty of Engineering</a></li>
+                    <li><a href="https://fse.ewubd.edu/computer-science-engineering">Department of CSE</a></li>
+                    <!-- <li><a href="">Category</a></li>
                     <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
+                    <li><a href="">Category</a></li> -->
                 </ul>
             </article>
 
             <article>
                 <h4>Important Link</h4>
                 <ul>
-                    <li><a href="">Art</a></li>
-                    <li><a href="">Wild Life</a></li>
-                    <li><a href="">Travel</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="">Category</a></li>
+                    <li><a href="https://bangladesh.gov.bd/index.php">Govment</a></li>
+                    <li><a href="http://www.moedu.gov.bd/">Education Ministry </a></li>
+                    <li><a href="https://www.ewubd.edu/">East West University</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
                 </ul>
             </article>
 
@@ -38,18 +38,18 @@
                     <li><a href="">Call Numbers</a></li>
                     <li><a href="">Email</a></li>
                     <li><a href="">Facebook</a></li>
-                    <li><a href="">Category</a></li>
+                    <!-- <li><a href="">Twitter</a></li> -->
                 </ul>
             </article>
 
             <article>
                 <h4>Permalinks</h4>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Faculty Members</a></li>
-                    <li><a href="">Teaching Assistant</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Signin</a></li>
+                    <li><a href="<?php ROOT_URL?>coverPage/index.html">Home</a></li>
+                    <li><a href="<?php ROOT_URL?>faculty.php">Faculty Members</a></li>
+                    <li><a href="<?php ROOT_URL?>ta.php">Teaching Assistant</a></li>
+                    <!-- <li><a href="">About</a></li> -->
+                    <!-- <li><a href="<?php ROOT_URL?>signin.php">Signin</a></li> -->
                 </ul>
             </article>
         </div>
