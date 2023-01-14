@@ -1,25 +1,22 @@
 <?php
 include 'partials/headerPost.php';
 
-
-$query = "SELECT * FROM posts ORDER BY date_time DESC";
-$posts = mysqli_query($connection, $query);
+if(isset($_GET['search']) && isset($_GET['submit'])){
+    $search = filter_var($_GET['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $query = "SELECT * FROM posts WHERE title LIKE '%$search%' ORDER BY date_time DESC";
+    $posts = mysqli_query($connection, $query);
+}
+else {
+    header('location: ' . ROOT_URL . 'blog-notic.php');
+    die();
+}
 ?>
 
-    <!----------------------------------------- Start Search Bar --------------------------------------->
-    <section class="search__bar">
-        <form class="container search__bar-container" action="<?php ROOT_URL ?>search.php">
-            <div>
-                <i class="uil uil-search"></i>
-                <input type="search" name="search" placeholder="Search">
-            </div>
-            <button type="submit" name="submit" class="btn">Go</button>
-        </form>
-    </section>
-    <!----------------------------------------- End Search Bar --------------------------------------->
 
-    <!--------------------------------------- Start Post ----------------------------------->
-    <section class="posts">
+
+<?php if(mysqli_num_rows($posts) > 0) : ?>
+ <!--------------------------------------- Start Post ----------------------------------->
+ <section class="posts section__extra-margin">
         <div class="container posts__container">
             <?php while($post = mysqli_fetch_assoc($posts)) : ?>
             <article class="post">
@@ -65,9 +62,14 @@ $posts = mysqli_query($connection, $query);
         </div>
     </section>
     <!--------------------------------------- End Post ----------------------------------->
+<?php else : ?>
+    <div class="alert__message error lg section__extra-margin">
+        <p>No Post Found for this search!</p>
+    </div>
+<?php endif ?>
 
     <!--------------------------------------- Start Category ----------------------------------->
-    <section class="category__buttons">
+        <section class="category__buttons">
         <div class="container category__buttons-container">
             <?php
                 $all_categories_query = "SELECT * FROM categories";
@@ -81,5 +83,5 @@ $posts = mysqli_query($connection, $query);
     <!--------------------------------------- End Category ----------------------------------->
 
 <?php
-include 'partials/footer.php'
+    include 'partials/footer.php';
 ?>

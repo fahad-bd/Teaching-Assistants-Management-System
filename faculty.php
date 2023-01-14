@@ -2,7 +2,7 @@
 include 'partials/header.php';
 
 // fetch post 
-$query = "SELECT * FROM profile WHERE is_ta = 0";
+$query = "SELECT * FROM profile WHERE is_ta = 0 ORDER BY id";
 $faculty_result = mysqli_query($connection, $query);
 ?>
 
