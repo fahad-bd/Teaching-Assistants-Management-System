@@ -14,6 +14,10 @@ else {
     die();
 }
 
+//fetch ta from db
+$all_ta = "SELECT * FROM profile WHERE is_ta = 1";
+$all_ta_result = mysqli_query($connection, $all_ta);
+
 ?>
     <!-- profile edit  -->
     <section class="form__section">
@@ -27,6 +31,13 @@ else {
                 <select name="userrole" id="">
                     <option value="0">Faculty</option>
                     <option value="1">Teaching Assistant</option>
+                </select>
+                <p>Select TA</p>
+                <select name="ta_id">
+                        <option value="-1">TA Not Selected</option>
+                    <?php while($ta = mysqli_fetch_assoc($all_ta_result)) : ?>
+                        <option value="<?= $ta['id']?>"><?= $ta['name'] ?></option>
+                    <?php endwhile ?>
                 </select>
                 <div class="form__control">
                     <label for="avatar">Profile Picture</label>

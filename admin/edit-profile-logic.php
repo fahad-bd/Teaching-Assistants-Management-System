@@ -9,6 +9,7 @@ if(isset($_POST['submit'])) {
     $is_ta = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
     $avatar = $_FILES['avatar'];
     $fileName = basename($_FILES["avatar"]["name"]);
+    $ta_id = filter_var($_POST['ta_id'], FILTER_SANITIZE_NUMBER_INT);
     // echo "$fileName";
     // echo "$name";
     // echo "$description";
@@ -48,11 +49,11 @@ if(isset($_POST['submit'])) {
 
         if($fileName)
         {
-            $query = "UPDATE profile SET name = '$name', description = '$description', profilePic = '$fileName' , is_ta = $is_ta WHERE id = $id LIMIT 1";
+            $query = "UPDATE profile SET name = '$name', description = '$description', profilePic = '$fileName' , ta1 = $ta_id , is_ta = $is_ta WHERE id = $id LIMIT 1";
             $result = mysqli_query($connection, $query);
         }
         else {
-            $query = "UPDATE profile SET name = '$name', description = '$description', is_ta = $is_ta WHERE id = $id LIMIT 1";
+            $query = "UPDATE profile SET name = '$name', description = '$description', ta1 = $ta_id , is_ta = $is_ta WHERE id = $id LIMIT 1";
             $result = mysqli_query($connection, $query);
         }
 

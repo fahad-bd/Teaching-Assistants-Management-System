@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $is_ta = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
     $avatar = $_FILES['avatar'];
+    $ta_id = filter_var($_POST['ta_id'], FILTER_SANITIZE_NUMBER_INT);
     //echo $firstname, $lastname, $username, $email, $createpassword, $confirmpassword;
     //var_dump($avatar);
 
@@ -61,7 +62,7 @@ if(isset($_POST['submit'])){
     else {
         //insert new user in database
         // $insert_user_quary = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin, details) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0,'null')";
-        $insert_user_quary = "INSERT INTO profile (name, description, profilePic, ta1, ta2, is_ta) VALUES ('$name', '$description', '$fileName', 0, 0, $is_ta)";
+        $insert_user_quary = "INSERT INTO profile (name, description, profilePic, ta1, ta2, is_ta) VALUES ('$name', '$description', '$fileName', $ta_id, 0, $is_ta)";
 
         $insert_user_result = mysqli_query($connection, $insert_user_quary);
 

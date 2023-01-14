@@ -8,6 +8,12 @@ if(isset($_GET['id'])){
     $query = "SELECT * FROM profile WHERE id = $id";
     $result = mysqli_query($connection, $query);
     $profile = mysqli_fetch_assoc($result);
+    $ta_id = $profile['ta1'];
+    if($ta_id != -1){
+        $ta_profile_query = "SELECT * FROM profile WHERE id = $ta_id";
+        $ta_profile_result = mysqli_query($connection, $ta_profile_query);
+        $ta_profile = mysqli_fetch_assoc($ta_profile_result);
+    }
 }
 else {
     header('location: ' . ROOT_URL . 'faculty.php');
@@ -28,6 +34,27 @@ else {
     </section>
     <!--------------------------------------- End Post Body ----------------------------------->
 
+    <!-- ta  -->
+    <?php if($ta_id != -1) : ?>
+    <section class="posts">
+        <div class="container posts__container">
+            <article class="post">
+                <div class="post__thumbnail">
+                    <img src="./images/<?= $ta_profile['profilePic'] ?>" alt="">
+                </div>
+                <div class="post__info">
+                    <h3 class="post__title">
+                        <a href="<?= ROOT_URL ?>profile.php?id=<?= $ta_profile['id'] ?>"><?= $ta_profile['name'] ?></a>
+                    </h3>
+                    <p class="post__body">
+                        <?= substr($ta_profile['description'],0,150) ?>...
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <?php endif ?>
+    <!-- ta end  -->
     <!--------------------------------------- Start Category ----------------------------------->
     <section class="category__buttons">
         <div class="container category__buttons-container">
