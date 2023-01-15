@@ -38,6 +38,7 @@ else {
     <?php if($ta_id != -1) : ?>
     <section class="posts">
         <div class="container posts__container">
+            <h2>Teaching Assistant:</h2>
             <article class="post">
                 <div class="post__thumbnail">
                     <img src="./images/<?= $ta_profile['profilePic'] ?>" alt="">

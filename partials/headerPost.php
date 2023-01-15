@@ -43,7 +43,7 @@ if(isset($_SESSION['user-id'])) {
                 <li><a href="<?php echo ROOT_URL?>blog-notic.php">Post</a></li>
                 <!-- <li><a href="<?php echo ROOT_URL?>about.php">About</a></li> -->
                 <!-- <li><a href="<?php echo ROOT_URL?>services.php">Services</a></li> -->
-                <li><a href="<?php echo ROOT_URL?>massagePage/sms.html">Contact</a></li>
+                <li><a href="<?php echo ROOT_URL?>about.php">About</a></li>
 
                 <!-- if already login then show profile or show login option -->
                 <?php if(isset($_SESSION['user-id'])) : ?>
